@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Northwind';
+  title: string = 'Northwind';
+  //Angular.json da scripts arrayindekileri ekle.(jquery)
+  // npm install ngx-toastr ekle.
+  //npm install @angular/animations hata alınırsa bunları yaz npm install --save --legacy-peer-deps  npm config set legacy-peer-deps true 
 }
