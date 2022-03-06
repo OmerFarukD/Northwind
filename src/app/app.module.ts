@@ -13,6 +13,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe'; //*******************
 import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './Components/cart-summary/cart-summary.component';
 import { ProductAddComponent } from './Components/product-add/product-add.component';
+import { LoginComponent } from './Components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { ProductAddComponent } from './Components/product-add/product-add.compon
     VatAddedPipe,
     FilterPipePipe,
     CartSummaryComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
