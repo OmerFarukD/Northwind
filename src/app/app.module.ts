@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import{BrowserAnimationsModule} from "@angular/platform-browser/animations"
@@ -6,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './Components/product/product.component';
 import { CategoryComponent } from './Components/category/category.component';
 import { NaviComponent } from './Components/navi/navi.component';
-import { HttpClientModule } from '@angular/common/http'; //****************** */
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; //****************** */
 import { VatAddedPipe } from './pipes/vat-added.pipe'; 
 import { FormsModule ,ReactiveFormsModule,} from '@angular/forms'; //****************************** */
 import { FilterPipePipe } from './pipes/filter-pipe.pipe'; //***************************** */
@@ -32,13 +33,14 @@ import { LoginComponent } from './Components/login/login.component';
     HttpClientModule ,//************************************************ */
     FormsModule , 
     BrowserAnimationsModule,
-    ReactiveFormsModule, //******Önemli */
+    ReactiveFormsModule,
+    
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })  
 
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
